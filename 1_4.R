@@ -22,4 +22,24 @@ if (mean(my_vector) > 20){
   result <- "My mean is not so great"
 }
 
+#3
+#В встроенных в R данных AirPassengers хранится 144 значения (количество
+#пассажиров в месяц) с 1949 по 1960 год.  Итак, ваша задача создать переменную
+#good_months и сохранить в нее число пассажиров только в тех месяцах,
+#в которых это число больше, чем показатель в предыдущем месяце.  
 
+data("AirPassengers")
+good_months <- c() # we should initialize vector
+for(i in 2:length(AirPassengers))
+  if (AirPassengers[i] > AirPassengers[i - 1])
+    good_months <- c(good_months, AirPassengers[i])
+
+# good_months <- c()    
+# index <- 1    
+# for (i in 2:length(AirPassengers)) {    
+#   if (AirPassengers[i]>AirPassengers[i-1]){    
+#     good_months[index] <- AirPassengers[i]    
+#     index <- index + 1    
+#   }    
+# }
+# good_months <- AirPassengers[-1][AirPassengers[-1] > AirPassengers[-144]]
