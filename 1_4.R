@@ -68,3 +68,8 @@ moving_average <- c(sums[MAGIC], moving_average) / MAGIC
 # size <- length(AirPassengers) + 1
 # moving_average <- (sums[(MAGIC+1):size] - sums[1:(size-MAGIC)]) / MAGIC
 
+# MAGIC <- 10 #mine with diff
+# size <- length(AirPassengers)
+# sums <- cumsum(AirPassengers)
+# moving_average <- c(sums[MAGIC], diff(sums, MAGIC)) / MAGIC
+
