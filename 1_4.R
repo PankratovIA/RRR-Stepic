@@ -55,4 +55,16 @@ for(i in 2:length(AirPassengers))
 MAGIC <- 10
 size <- length(AirPassengers)
 sums <- cumsum(AirPassengers)
-moving_average <- (sums[(MAGIC+1):size] - sums[2:(size-MAGIC+1)]) #/ (1.0*MAGIC) 
+moving_average <- (sums[(MAGIC+1):size] - sums[1:(size-MAGIC)])
+moving_average <- c(sums[MAGIC], moving_average) / MAGIC
+
+# n <- 10 #stepic    
+# d <- AirPassengers    
+# cx <- c(0, cumsum(d))    
+# moving_average <- (cx[(n + 1):length(cx)] - cx[1:(length(cx) - n)]) / n
+
+# MAGIC <- 10 #mine modified
+# sums <- c(0, cumsum(AirPassengers)) #tricky
+# size <- length(AirPassengers) + 1
+# moving_average <- (sums[(MAGIC+1):size] - sums[1:(size-MAGIC)]) / MAGIC
+
