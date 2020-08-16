@@ -43,3 +43,16 @@ for(i in 2:length(AirPassengers))
 #   }    
 # }
 # good_months <- AirPassengers[-1][AirPassengers[-1] > AirPassengers[-144]]
+
+#4
+#Для встроенных в R данных AirPassengers рассчитайте скользящее среднее
+#с интервалом сглаживания равным 10. Напечатайте получившийся результат
+#(первым значением в выводе должно быть среднее для элементов 1:10, во втором
+#значении - среднее для элементов 2:11 и т.д., в последнем  - среднее для
+#элементов 135 :144). Все полученные значения средних сохраните в переменную
+#moving_average.
+
+MAGIC <- 10
+size <- length(AirPassengers)
+sums <- cumsum(AirPassengers)
+moving_average <- (sums[(MAGIC+1):size] - sums[2:(size-MAGIC+1)]) #/ (1.0*MAGIC) 
