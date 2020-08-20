@@ -15,3 +15,16 @@ descriptions_stat <- aggregate(x = cbind(df$hp, df$disp), by = list(df$am), FUN 
 colnames(descriptions_stat)  <- c("am", "sd hp", "sd disp") #not needed
 # Stepic
 # descriptions_stat <- aggregate(cbind(hp,disp) ~ am, mtcars, sd)
+
+#3
+#Воспользуемся встроенными данными airquality. В новую переменную сохраните
+#subset исходных данных, оставив наблюдения только для месяцев 7, 8 и 9.
+#При помощи функции aggregate рассчитайте количество непропущенных наблюдений
+#по переменной Ozone в 7, 8 и 9 месяце. Для определения количества наблюдений
+#используйте функцию length(). Результат выполнения функции aggregate 
+#сохраните в переменную result.
+library(psych)
+data('airquality')
+
+df <- subset(airquality, Month %in% c(7, 8, 9))
+result <- aggregate( Ozone ~ Month, df, length)
