@@ -28,3 +28,9 @@ data('airquality')
 
 df <- subset(airquality, Month %in% c(7, 8, 9))
 result <- aggregate( Ozone ~ Month, df, length)
+
+#4
+#Примените функцию describeBy к количественным переменным данных
+#airquality, группируя наблюдения по переменной Month. Чему равен
+#коэффициент асимметрии (skew) переменной Wind в восьмом месяце?
+describeBy(airquality, group=airquality$Month)
