@@ -43,3 +43,13 @@ describeBy(airquality, group=airquality$Month)
 #отклонения переменных.
 data(iris)
 describe(iris)
+
+#6
+#В данных iris расположите по убыванию значения медиан количественных
+#переменных в группе virginica. #Species
+#describeBy(iris, iris$Species)
+describeBy(iris, iris$Species=='virginica')
+#not mine
+#sort(aggregate(. ~ Species, iris[iris$Species =='virginica',], median), d=T)
+
+
