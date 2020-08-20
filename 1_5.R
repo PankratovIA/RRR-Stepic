@@ -52,4 +52,11 @@ describeBy(iris, iris$Species=='virginica')
 #not mine
 #sort(aggregate(. ~ Species, iris[iris$Species =='virginica',], median), d=T)
 
-
+#7
+#В переменной my_vector сохранен вектор с пропущенными значениями.
+#Вам нужно создать новый вектор fixed_vector, в котором все пропущенные
+#значения вектора my_vector будут заменены на среднее значение 
+#по имеющимся наблюдениям. При этом исходный вектор оставьте без
+#изменений!
+my_vector <- c(1, 10, NA, 3,  NA)
+fixed_vector <- replace(my_vector, is.na(my_vector), mean(my_vector, na.rm = TRUE))
