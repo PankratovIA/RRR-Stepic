@@ -37,3 +37,9 @@ describeBy(airquality, group=airquality$Month)
 
 #df <- airquality
 #describeBy(df$Wind,group=df$Month == 8) #not mine
+
+#5
+#Обратимся к встроенным данным iris. Соотнесите значения стандартного
+#отклонения переменных.
+data(iris)
+describe(iris)
