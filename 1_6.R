@@ -12,3 +12,10 @@
 df  <- airquality
 df$Month  <- factor(df$Month,
                     labels = c("May", "Jun", "Jul", "Ago", "Sep"))
+
+library(ggplot2)
+ggplot(df, aes(x = Month, y = Ozone))+
+  geom_boxplot()+
+  xlab("Month")+
+  ylab("Ozone")+
+  ggtitle("Ozone during 5 months")
