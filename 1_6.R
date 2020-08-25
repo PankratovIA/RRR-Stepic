@@ -14,7 +14,7 @@ df$Month  <- factor(df$Month,
                     labels = c("May", "Jun", "Jul", "Ago", "Sep"))
 
 library(ggplot2)
-ggplot(df, aes(x = Month, y = Ozone))+
+ggplot(df, aes(x = Month, y = Ozone, fill=Month))+
   geom_boxplot()+
   xlab("Month")+
   ylab("Ozone")+
